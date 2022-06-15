@@ -25,7 +25,8 @@ pipeline {
         stage ('Deployment') {        
             steps {
                 echo 'Deployment starting'
-                
+                snDevOpsChange(ignoreErrors: true, changeRequestDetails:"""{setCloseCode:true,attributes:{"category":"DevOps", "priority":"1", "work_notes": "This update is from the Jenkinsfile"}}""")
+
                 echo 'Deployment ended'
             }
         }
